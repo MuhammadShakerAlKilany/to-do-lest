@@ -1,0 +1,6 @@
+<div *ngFor="let todo of toDolest; index as i">
+
+    <input type="button" [value]="completValBoton" (click)="isCompletVal(i)"> 
+    <input type="button" value="delete" (click)="deletToDo(i)"> 
+     {{todo.toDo | strikeToDo : todo.isComplet}} 
+</div>
