@@ -1,6 +1,6 @@
-<div *ngFor="let todo of toDolest; index as i">
+<div *ngFor="let todo of toDolest; index as i; " class="d-flex w-50 m-auto mt-3 flex-row ">
 
-    <input type="button" [value]="completValBoton" (click)="isCompletVal(i)"> 
-    <input type="button" value="delete" (click)="deletToDo(i)"> 
-     {{todo.toDo | strikeToDo : todo.isComplet}} 
+    <input type="button" [value]="todo.isComplet ? 'Complet': 'notComplet'" (click)="isCompletVal(i)" style="width: 7rem; height: 2rem;" class="btn btn-secondary me-2 text-center p-0 mt-2"> 
+    <input type="button" value="delete" style="  width: 5rem ;height: 2rem ;" (click)="deletToDo(i)" class="btn btn-danger me-2  text-center p-0 mt-2"> 
+    <span class="h1 text-center" [ngStyle]="{'text-decoration':todo.isComplet? 'line-through':''}" > {{todo.toDo }} </span>
 </div>
