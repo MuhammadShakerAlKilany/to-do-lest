@@ -10,7 +10,10 @@ export class AddToDoComponent {
  todo:string=""
   @Output() sendToDo = new EventEmitter()
   addToLestToDo(){
-    this.sendToDo.emit(this.todo)
-    this.todo=""
+    if(this.todo){
+
+      this.sendToDo.emit(this.todo)
+      this.todo=""
+    }
   }
 }
